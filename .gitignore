@@ -1,0 +1,21 @@
+# --- IDE / editor files ---
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
+
+# --- FTP deploy state (kept out of the site root) ---
+.ftp-deploy-sync-state.json
+
+# --- Local environment / credentials ---
+.env
+http-client.env.json
+
+# --- Logs & temp ---
+*.log
+tmp/
