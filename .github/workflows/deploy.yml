@@ -1,0 +1,56 @@
+name: Deploy Tobi AI Website for Production
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason for manual deployment'
+        required: true
+        default: 'Manual update and deployment'
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+          - production
+          - staging
+jobs:
+  deploy:
+    name: Deploy Production
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the latest source code
+        uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Display development information
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          echo "Manual deployment triggered"
+          echo "Reason: ${{ github.event.inputs.reason }}"
+          echo "Environment: ${{ github.event.inputs.environment}}"
+
+      - name: Sync files for Production
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          timeout: 90000
+          log-level: verbose
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            */test/*
+            test/**
+            .gitignore
+            http-client.env.json
+            LICENSE
+            README.md
+          state-name: .ftp-deploy-sync-state.json    # Keep track of sync state
+          server-dir: /public_html          # Specify your root directory if needed
