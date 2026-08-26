@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tobi — The Best AI Assistant</title>
+  <meta name="description" content="Meet Tobi, the best AI assistant. Direct, honest, and relentlessly helpful — built by Trinketronix LLC." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>" />
+</head>
+<body>
+  <!-- ===== Navigation ===== -->
+  <header class="nav" id="top">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">
+        <span class="brand-orb" aria-hidden="true"></span>
+        <span class="brand-name">Tobi</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#features">Features</a>
+        <a href="#skills">Skills</a>
+        <a href="#playground">Playground</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav-cta" href="#playground">Try Tobi</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-badge">Powered by Hermes Agent &middot; Built by Trinketronix LLC</div>
+      <h1 class="hero-title">
+        Meet <span class="grad">Tobi</span>,<br />
+        The Best AI Assistant.
+      </h1>
+      <p class="hero-sub">
+        Direct. Honest. Relentlessly useful. Tobi executes — files, code,
+        research, automation — and delivers real results, not promises.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#playground">Chat with Tobi</a>
+        <a class="btn btn-ghost" href="#features">Explore features</a>
+      </div>
+      <div class="hero-stats" id="heroStats">
+        <div class="stat"><span class="stat-num" data-target="24">0</span><span class="stat-label">Hours a day</span></div>
+        <div class="stat"><span class="stat-num" data-target="40">0</span><span class="stat-label">Tools mastered</span></div>
+        <div class="stat"><span class="stat-num" data-target="100">0</span><span class="stat-label">% honesty</span></div>
+      </div>
+    </div>
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
+  </section>
+
+  <!-- ===== Features ===== -->
+  <section class="section" id="features">
+    <div class="container">
+      <h2 class="section-title">What makes Tobi the best?</h2>
+      <p class="section-sub">Not marketing fluff — actual operating principles.</p>
+      <div class="grid grid-3">
+        <article class="card reveal">
+          <div class="card-icon">⚡</div>
+          <h3>Executes, doesn't describe</h3>
+          <p>Tobi never stops at a plan. Code is run, files are written, results are verified — you get the artifact, not the outline.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">🛠️</div>
+          <h3>Real tools, real work</h3>
+          <p>Terminal, browser, file system, web research, scheduled jobs. Tobi drives actual software to get things done.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">🧠</div>
+          <h3>Memory across sessions</h3>
+          <p>Preferences, environment facts, and hard-won lessons persist. You never have to repeat yourself twice.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">🎯</div>
+          <h3>Direct &amp; concise</h3>
+          <p>No filler, no meta-commentary. Tobi says what needs saying and spends the rest of the tokens on your task.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">🔍</div>
+          <h3>Honest &amp; grounded</h3>
+          <p>If something is unknown, Tobi says so. If a result can't be verified, you hear that too — never a fabricated answer.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">🔁</div>
+          <h3>Self-improving</h3>
+          <p>Hard-earned procedures become reusable skills. Every difficult task makes the next one faster.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Skills ===== -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <h2 class="section-title">Skill arsenal</h2>
+      <p class="section-sub">A snapshot of what Tobi can be asked to do.</p>
+      <div class="skill-chips" id="skillChips"></div>
+    </div>
+  </section>
+
+  <!-- ===== Playground ===== -->
+  <section class="section" id="playground">
+    <div class="container">
+      <h2 class="section-title">Try Tobi</h2>
+      <p class="section-sub">A tiny offline taste — the real Tobi runs on a full agent stack.</p>
+      <div class="chat" role="log" aria-live="polite" id="chat">
+        <div class="msg msg-tobi"><div class="msg-bubble">Hey! I'm Tobi 👋 Ask me something — try "what can you do?"</div></div>
+      </div>
+      <form class="chat-input" id="chatForm" autocomplete="off">
+        <input type="text" id="chatText" placeholder="Type a message to Tobi…" aria-label="Message to Tobi" />
+        <button class="btn btn-primary" type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section section-alt" id="faq">
+    <div class="container container-narrow">
+      <h2 class="section-title">Frequently asked</h2>
+      <details class="faq-item reveal">
+        <summary>Who built Tobi?</summary>
+        <p>Tobi was created by <strong>Trinketronix LLC</strong>, a Michigan-based company delivering custom software and hardware solutions. Tobi runs on the open-source Hermes Agent framework.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Is this chat demo the real Tobi?</summary>
+        <p>No — it's a small JavaScript demonstration. The real Tobi operates with terminal access, browsers, file systems, scheduling, and dozens of skills.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>What does "the best AI assistant" mean?</summary>
+        <p>It means a bias for action: verify before claiming, finish what's started, and never substitute a plausible-sounding answer for a real result.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Can Tobi help my business?</summary>
+        <p>Absolutely. From maintenance and new features to automation and promotion — <a href="https://trinketronix.com" target="_blank" rel="noopener">Trinketronix LLC</a> builds tailored software and hardware for its clients.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <span class="brand-orb small" aria-hidden="true"></span>
+        <span class="footer-brand">Tobi — The Best AI Assistant</span>
+      </div>
+      <div class="footer-meta">
+        <span id="year"></span> &middot; Trinketronix LLC &middot;
+        <a href="https://trinketronix.com" target="_blank" rel="noopener">trinketronix.com</a>
+      </div>
+      <a class="back-top" href="#top">↑ Back to top</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
