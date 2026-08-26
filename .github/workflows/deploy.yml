@@ -1,24 +1,12 @@
-name: Deploy Tobi AI Website for Production
+name: Deploy Tobi AI Website for Production Release
 on:
-  release:
-    types: [published]
-  workflow_dispatch:
-    inputs:
-      reason:
-        description: 'Reason for manual deployment'
-        required: true
-        default: 'Manual update and deployment'
-      environment:
-        description: 'Environment to deploy to'
-        required: true
-        default: 'production'
-        type: choice
-        options:
-          - production
-          - staging
+  pull_request:
+    types: [closed]
+
 jobs:
   deploy:
-    name: Deploy Production
+    if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'main'
+    name: Deploy Tobi Website
     runs-on: ubuntu-latest
     steps:
       - name: Get the latest source code
