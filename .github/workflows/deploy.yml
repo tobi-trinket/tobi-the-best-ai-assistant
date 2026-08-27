@@ -41,4 +41,4 @@ jobs:
             LICENSE
             README.md
           state-name: .ftp-deploy-sync-state.json    # Keep track of sync state
-          server-dir: /public_html          # Specify your root directory if needed
+          server-dir: /public_html/         # Root directory — must end with /
