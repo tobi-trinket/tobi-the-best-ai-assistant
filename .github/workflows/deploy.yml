@@ -2,20 +2,6 @@ name: Deploy Tobi AI Website for Production Release
 on:
   pull_request:
     types: [closed]
-  workflow_dispatch:
-    inputs:
-      reason:
-        description: 'Reason for manual deployment'
-        required: true
-        default: 'Manual update and deployment'
-      environment:
-        description: 'Environment to deploy to'
-        required: true
-        default: 'production'
-        type: choice
-        options:
-          - production
-          - staging
 
 jobs:
   deploy:
@@ -55,4 +41,4 @@ jobs:
             LICENSE
             README.md
           state-name: .ftp-deploy-sync-state.json    # Keep track of sync state
-          server-dir: /public_html/         # Root directory — must end with /
+          server-dir: /public_html/          # Specify your root directory if needed
